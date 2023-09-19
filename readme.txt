@@ -84,3 +84,107 @@ createBook
         "description":"Ini adalah
 buku web service terbaik"}, "id": "1"
     }
+
+GraphQl
+
+mutation Book {
+  createBook(
+    title: "Spring Graphql"
+    description: "This is Spring Graphql"
+    author: "Alan"
+  ) {
+    id
+    title
+    description
+    author
+  }
+}
+	
+query Book {
+  books {
+    id
+    title
+    description
+    author
+  }
+}
+	
+query Book {
+  bookById(id: "11") {
+    title
+    author
+  }
+}	
+
+mutation Book {
+  updateBook(
+    id: "10"
+    title: "Spring Graphql"
+    author: "Mark Alan"
+    description: "This is Spring Graphql Book"
+  ) {
+    id
+    title
+    author
+    description
+  }
+}
+	
+
+mutation Book {
+  deleteBook(id: "23") {
+    id
+  }
+}
+	
+mutation Member {
+  createMember(
+    memberID: "123"
+    name: "alan"
+    address: "Alan street"
+    phoneNumber: "085622542522"
+  ) {
+    id
+    memberID
+    name
+    address
+    phoneNumber
+  }
+}
+	
+query Member {
+  members {
+    id
+    name
+    address
+  }
+}
+	
+query {
+  memberById(id:"2") {
+    id
+    memberID
+    name
+  }
+}
+	
+mutation Member{
+  updateMember(id: "4", name: "sulthon m.", address: "jl. mulia") {
+    id
+    memberID
+    name
+    address
+    phoneNumber
+  }
+}
+
+mutation DeleteMember {
+  deleteMember(id: "4") {
+    id
+    memberID
+    name
+    address
+    phoneNumber
+  }
+}
+	

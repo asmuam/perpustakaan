@@ -50,4 +50,27 @@ public class BookServiceImpl implements BookService {
 
         return bookDtos;
     }
+
+    @Override
+    public BookDto updateBook(BookDto bookDto) {
+        Book book = bookRepository.save(BookMapper.mapToBook(bookDto));
+        return BookMapper.mapToBookDto(book);
+    }
+
+    @Override
+    public void deleteBook(BookDto bookDto) {
+        bookRepository.delete(BookMapper.mapToBook(bookDto));
+    }
+
+    @Override
+    public BookDto getBook(Long id) {
+        Book book = bookRepository.getReferenceById(id);
+        return BookMapper.mapToBookDto(book);
+    }
+
+    @Override
+    public BookDto createBookGraphql(BookDto bookDto) {
+        Book book = bookRepository.save(BookMapper.mapToBook(bookDto));
+        return BookMapper.mapToBookDto(book);
+    }
 }

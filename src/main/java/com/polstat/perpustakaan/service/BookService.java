@@ -14,6 +14,16 @@ import java.util.List;
 public interface BookService {
 
     public void createBook(BookDto bookDto);
+
+    public BookDto createBookGraphql(BookDto bookDto);
+    
     public List<BookDto> getBooks();
+
     public List<BookDto> searchBooksByTitleOrAuthor(String keyword);
+
+    public BookDto updateBook(BookDto bookDto);
+
+    public void deleteBook(BookDto bookDto);
+
+    public BookDto getBook(Long id);
 }
