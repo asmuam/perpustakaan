@@ -23,4 +23,5 @@ public interface LoanService {
      */
     public Loan borrowBook(String memberID, Long bookID, LocalDate startDate, LocalDate dueDate);
     public int returnBook(String memberID, Long bookID, LocalDate returnDate);
+    public Loan getLoanById(Long loanId);
 }
